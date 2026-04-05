@@ -10,11 +10,11 @@ import { platformCommand } from "./commands/platform"
 import { ApiError } from "./http"
 
 const program = new Command()
-  .name("hivekey")
-  .description("CLI for the Hivekey API — identity infrastructure for AI agents")
+  .name("loomal")
+  .description("CLI for the Loomal API — identity infrastructure for AI agents")
   .version("0.2.0")
-  .option("--api-key <key>", "API key (or set HIVEKEY_API_KEY)")
-  .option("--base-url <url>", "API base URL (or set HIVEKEY_API_URL)")
+  .option("--api-key <key>", "API key (or set LOOMAL_API_KEY)")
+  .option("--base-url <url>", "API base URL (or set LOOMAL_API_URL)")
 
 program.addCommand(whoamiCommand)
 program.addCommand(mailCommand)

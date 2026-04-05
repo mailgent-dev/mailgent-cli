@@ -1,9 +1,9 @@
 {
-  "name": "hivekey-cli",
+  "name": "loomal-cli",
   "version": "0.2.0",
-  "description": "CLI for the Hivekey API — identity infrastructure for AI agents",
+  "description": "CLI for the Loomal API — identity infrastructure for AI agents",
   "bin": {
-    "hivekey": "dist/index.js"
+    "loomal": "dist/index.js"
   },
   "files": [
     "dist"
@@ -17,7 +17,7 @@
     "node": ">=18"
   },
   "keywords": [
-    "hivekey",
+    "loomal",
     "cli",
     "ai",
     "agent",

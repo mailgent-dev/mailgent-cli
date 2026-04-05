@@ -1,11 +1,11 @@
-# hivekey-cli
+# loomal-cli
 
-The official CLI for the [Hivekey API](https://hivekey.ai) — identity infrastructure for AI agents.
+The official CLI for the [Loomal API](https://loomal.ai) — identity infrastructure for AI agents.
 
 ## Install
 
 ```bash
-npm install -g hivekey-cli
+npm install -g loomal-cli
 ```
 
 Requires Node.js 18 or later.
@@ -14,10 +14,10 @@ Requires Node.js 18 or later.
 
 ```bash
 # Set your API key
-export HIVEKEY_API_KEY=your_api_key
+export LOOMAL_API_KEY=your_api_key
 
 # Verify your identity
-hivekey whoami
+loomal whoami
 ```
 
 ## Authentication
@@ -26,10 +26,10 @@ Pass your API key in one of two ways:
 
 ```bash
 # Environment variable (recommended)
-export HIVEKEY_API_KEY=your_api_key
+export LOOMAL_API_KEY=your_api_key
 
 # Or per-command flag
-hivekey whoami --api-key your_api_key
+loomal whoami --api-key your_api_key
 ```
 
 ## Commands
@@ -37,58 +37,58 @@ hivekey whoami --api-key your_api_key
 ### Identity
 
 ```bash
-hivekey whoami                          # Show identity info
+loomal whoami                          # Show identity info
 ```
 
 ### Mail
 
 ```bash
-hivekey mail send --to a@b.com --subject "Hi" --text "Hello"
-hivekey mail list [--limit 20] [--labels inbox]
-hivekey mail get <messageId>
-hivekey mail reply <messageId> --text "Reply"
-hivekey mail labels <messageId> --add important
-hivekey mail delete <messageId>
+loomal mail send --to a@b.com --subject "Hi" --text "Hello"
+loomal mail list [--limit 20] [--labels inbox]
+loomal mail get <messageId>
+loomal mail reply <messageId> --text "Reply"
+loomal mail labels <messageId> --add important
+loomal mail delete <messageId>
 ```
 
 ### Threads
 
 ```bash
-hivekey threads list [--limit 20]
-hivekey threads get <threadId>
-hivekey threads delete <threadId>
+loomal threads list [--limit 20]
+loomal threads get <threadId>
+loomal threads delete <threadId>
 ```
 
 ### Vault
 
 ```bash
-hivekey vault list
-hivekey vault get <name>
-hivekey vault store <name> --type API_KEY --data '{"key":"sk_..."}'
-hivekey vault delete <name>
-hivekey vault totp <name>               # Get TOTP code
+loomal vault list
+loomal vault get <name>
+loomal vault store <name> --type API_KEY --data '{"key":"sk_..."}'
+loomal vault delete <name>
+loomal vault totp <name>               # Get TOTP code
 ```
 
 ### Logs
 
 ```bash
-hivekey logs list [--category mail] [--status error]
-hivekey logs stats
+loomal logs list [--category mail] [--status error]
+loomal logs stats
 ```
 
 ### DID
 
 ```bash
-hivekey did resolve <identityId>        # Resolve DID document
-hivekey did domain                      # Resolve domain DID
+loomal did resolve <identityId>        # Resolve DID document
+loomal did domain                      # Resolve domain DID
 ```
 
 ## Global Options
 
 | Flag | Description |
 | --- | --- |
-| `--api-key <key>` | API key (or set `HIVEKEY_API_KEY` env var) |
-| `--base-url <url>` | API base URL (or set `HIVEKEY_API_URL` env var) |
+| `--api-key <key>` | API key (or set `LOOMAL_API_KEY` env var) |
+| `--base-url <url>` | API base URL (or set `LOOMAL_API_URL` env var) |
 | `--json` | Output as JSON |
 | `--help` | Show help |
 | `--version` | Show version |
@@ -98,16 +98,16 @@ hivekey did domain                      # Resolve domain DID
 Most commands support the `--json` flag for machine-readable output:
 
 ```bash
-hivekey whoami --json
-hivekey mail list --json
-hivekey vault list --json
+loomal whoami --json
+loomal mail list --json
+loomal vault list --json
 ```
 
 ## Links
 
-- [Documentation](https://docs.hivekey.ai)
-- [Website](https://hivekey.ai)
-- [Node.js SDK](https://github.com/hivekey-ai/nodejs-sdk)
+- [Documentation](https://docs.loomal.ai)
+- [Website](https://loomal.ai)
+- [Node.js SDK](https://github.com/loomal-ai/nodejs-sdk)
 
 ## License
 
