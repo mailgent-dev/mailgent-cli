@@ -1,14 +1,14 @@
-# @mailgent/cli
+# @mailgent-dev/cli
 
 The official CLI for the [Mailgent API](https://mailgent.dev) — identity infrastructure for AI agents.
 
-[![npm](https://img.shields.io/npm/v/@mailgent/cli)](https://www.npmjs.com/package/@mailgent/cli)
+[![npm](https://img.shields.io/npm/v/@mailgent-dev/cli)](https://www.npmjs.com/package/@mailgent-dev/cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Install
 
 ```bash
-npm install -g @mailgent/cli
+npm install -g @mailgent-dev/cli
 ```
 
 Requires Node.js 18 or later.

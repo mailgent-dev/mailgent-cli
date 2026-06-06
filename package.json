@@ -1,5 +1,5 @@
 {
-  "name": "@mailgent/cli",
+  "name": "@mailgent-dev/cli",
   "version": "0.6.2",
   "description": "CLI for the Mailgent API — identity infrastructure for AI agents",
   "bin": {
