@@ -3,7 +3,7 @@ import { resolveConfig } from "../config"
 import { request, requestUnchecked } from "../http"
 import { table, json as jsonOut, success, error } from "../output"
 
-// ─── loomal pay <url> ──────────────────────────────────────────────────────
+// ─── mailgent pay <url> ─────────────────────────────────────────────────────
 
 export const payCommand = new Command("pay")
   .description("Pay an x402-protected URL in USDC")
@@ -33,8 +33,8 @@ export const payCommand = new Command("pay")
       const msg = (result as { message?: string } | null)?.message
       if (status === 403 || errCode === "forbidden") {
         error(`${msg ?? "Forbidden"}`)
-        console.error("\n`loomal pay` requires a BUYER project (payments:spend scope).")
-        console.error("If this is a SELLER key, create a BUYER project at https://console.loomal.ai")
+        console.error("\n`mailgent pay` requires a BUYER project (payments:spend scope).")
+        console.error("If this key lacks the scope, create a BUYER project at https://console.mailgent.dev")
         console.error("or rotate this key to add the scope. Project type is set at create time.")
       } else {
         error("Unexpected response from /v0/payments/pay")
@@ -59,7 +59,7 @@ export const payCommand = new Command("pay")
     else if (result.contentText) console.log(result.contentText)
   })
 
-// ─── loomal activity ───────────────────────────────────────────────────────
+// ─── mailgent activity ──────────────────────────────────────────────────────
 
 export const activityCommand = new Command("activity")
   .description("Bank-statement-style merged feed of payments sent and received")
@@ -90,7 +90,7 @@ export const activityCommand = new Command("activity")
     )
   })
 
-// ─── loomal mandate <subcommand> ───────────────────────────────────────────
+// ─── mailgent mandate <subcommand> ──────────────────────────────────────────
 
 export const mandateCommand = new Command("mandate").description(
   "Manage spend mandates (per-call + daily caps on this identity's wallet)",
@@ -123,7 +123,7 @@ mandateCommand
 
     if (data.installError) {
       error(`Install failed: ${data.installError}`)
-      error("Mandate is unusable. Retry `loomal mandate create`.")
+      error("Mandate is unusable. Retry `mailgent mandate create`.")
       process.exit(1)
     }
 
@@ -149,7 +149,7 @@ mandateCommand
     )
 
     if (opts.json) return jsonOut(data)
-    if (!data.mandates?.length) return console.log("No mandates. Create one with `loomal mandate create`.")
+    if (!data.mandates?.length) return console.log("No mandates. Create one with `mailgent mandate create`.")
 
     table(
       ["Mandate ID", "Max/call", "Daily cap", "Today", "State", "Valid until"],

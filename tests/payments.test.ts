@@ -25,17 +25,17 @@ function lastBody(mockFetch: ReturnType<typeof stubFetch>) {
 }
 
 beforeEach(() => {
-  process.env.LOOMAL_API_KEY = "loid-test"
+  process.env.MAILGENT_API_KEY = "loid-test"
   vi.spyOn(console, "log").mockImplementation(() => {})
   vi.spyOn(console, "error").mockImplementation(() => {})
 })
 
 afterEach(() => {
   vi.restoreAllMocks()
-  delete process.env.LOOMAL_API_KEY
+  delete process.env.MAILGENT_API_KEY
 })
 
-describe("loomal pay", () => {
+describe("mailgent pay", () => {
   it("POSTs to /v0/payments/pay with the url", async () => {
     const mockFetch = stubFetch({
       status: 200,
@@ -107,7 +107,7 @@ describe("loomal pay", () => {
   })
 })
 
-describe("loomal activity", () => {
+describe("mailgent activity", () => {
   it("GETs /v0/payments/activity with default limit", async () => {
     const mockFetch = stubFetch({
       status: 200,
@@ -125,7 +125,7 @@ describe("loomal activity", () => {
   })
 })
 
-describe("loomal mandate", () => {
+describe("mailgent mandate", () => {
   it("create POSTs to /v0/payments/mandates with the caps", async () => {
     const mockFetch = stubFetch({
       status: 200,

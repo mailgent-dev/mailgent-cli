@@ -1,9 +1,9 @@
 {
-  "name": "@loomal/cli",
+  "name": "@mailgent/cli",
   "version": "0.6.2",
-  "description": "CLI for the Loomal API — identity infrastructure for AI agents",
+  "description": "CLI for the Mailgent API — identity infrastructure for AI agents",
   "bin": {
-    "loomal": "dist/index.js"
+    "mailgent": "dist/index.js"
   },
   "files": [
     "dist",
@@ -20,21 +20,21 @@
     "node": ">=18"
   },
   "keywords": [
-    "loomal",
+    "mailgent",
     "cli",
     "ai",
     "agent",
     "email"
   ],
   "license": "MIT",
-  "author": "Loomal",
-  "homepage": "https://loomal.ai",
+  "author": "Mailgent",
+  "homepage": "https://mailgent.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/loomal-ai/loomal-cli.git"
+    "url": "git+https://github.com/mailgent-dev/mailgent-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/loomal-ai/loomal-cli/issues"
+    "url": "https://github.com/mailgent-dev/mailgent-cli/issues"
   },
   "publishConfig": {
     "access": "public"

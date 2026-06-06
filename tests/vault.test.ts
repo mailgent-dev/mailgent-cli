@@ -29,13 +29,13 @@ function lastUrl(mockFetch: ReturnType<typeof stubFetch>) {
 
 describe("vault store helpers", () => {
   beforeEach(() => {
-    process.env.LOOMAL_API_KEY = "loid-test"
+    process.env.MAILGENT_API_KEY = "loid-test"
     vi.spyOn(console, "log").mockImplementation(() => {})
   })
 
   afterEach(() => {
     vi.restoreAllMocks()
-    delete process.env.LOOMAL_API_KEY
+    delete process.env.MAILGENT_API_KEY
   })
 
   it("store-api-key with --secret only sends legacy { key } shape", async () => {
@@ -104,11 +104,11 @@ describe("vault store helpers", () => {
 
 describe("vault totp + backup codes", () => {
   beforeEach(() => {
-    process.env.LOOMAL_API_KEY = "loid-test"
+    process.env.MAILGENT_API_KEY = "loid-test"
   })
   afterEach(() => {
     vi.restoreAllMocks()
-    delete process.env.LOOMAL_API_KEY
+    delete process.env.MAILGENT_API_KEY
   })
 
   it("totp prints code, expiry, and backup-codes-remaining when present", async () => {

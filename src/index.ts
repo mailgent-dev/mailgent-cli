@@ -15,11 +15,11 @@ import {
 import { ApiError } from "./http"
 
 const program = new Command()
-  .name("loomal")
-  .description("CLI for the Loomal API — identity infrastructure for AI agents")
+  .name("mailgent")
+  .description("CLI for the Mailgent API — identity infrastructure for AI agents")
   .version("0.6.2")
-  .option("--api-key <key>", "API key (or set LOOMAL_API_KEY)")
-  .option("--base-url <url>", "API base URL (or set LOOMAL_API_URL)")
+  .option("--api-key <key>", "API key (or set MAILGENT_API_KEY)")
+  .option("--base-url <url>", "API base URL (or set MAILGENT_API_URL)")
 
 program.addCommand(whoamiCommand)
 program.addCommand(mailCommand)
@@ -43,10 +43,10 @@ program.parseAsync(process.argv).catch((err) => {
     console.error(`Error [${err.status}]: ${err.message}`)
     if (err.status === 403 && BUYER_ONLY_COMMANDS.has(subcommand)) {
       console.error(
-        "\n`loomal " + subcommand + "` requires a BUYER project (payments:spend scope).",
+        "\n`mailgent " + subcommand + "` requires a BUYER project (payments:spend scope).",
       )
       console.error(
-        "If this is a SELLER key, create a BUYER project at https://console.loomal.ai",
+        "If this key lacks the scope, create a BUYER project at https://console.mailgent.dev",
       )
       console.error(
         "or rotate this key to add the scope. Project type is set at create time.",
