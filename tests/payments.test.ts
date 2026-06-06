@@ -46,7 +46,7 @@ describe("mailgent pay", () => {
         txHash: "0xabc",
         payer: "0xpayer",
         recipient: "0xrecipient",
-        resource: "https://seller.example.com/search",
+        resource: "https://api.example.com/search",
         balanceAfter: { usdc: "0.95", usdcRaw: "950000" },
         mandate: {
           mandateId: "m_1",
@@ -58,10 +58,10 @@ describe("mailgent pay", () => {
         content: { ok: true },
       },
     })
-    await payCommand.parseAsync(["https://seller.example.com/search"], { from: "user" })
+    await payCommand.parseAsync(["https://api.example.com/search"], { from: "user" })
 
     expect(lastUrl(mockFetch)).toContain("/v0/payments/pay")
-    expect(lastBody(mockFetch)).toEqual({ url: "https://seller.example.com/search" })
+    expect(lastBody(mockFetch)).toEqual({ url: "https://api.example.com/search" })
   })
 
   it("forwards --dry-run as dryRun", async () => {

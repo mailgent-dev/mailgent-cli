@@ -50,16 +50,14 @@ platformCommand
 
 platformCommand
   .command("create")
-  .description("Create a new identity. All flags optional — defaults to BUYER with a fresh 3-word slug name + matching inbox.")
-  .option("--purpose <BUYER|SELLER>", "Project type (default BUYER)")
+  .description("Create a new BUYER identity. All flags optional — defaults to a fresh 3-word slug name + matching inbox.")
   .option("--name <name>", "Display name (default: server-picked slug)")
-  .option("--email <emailName>", "Email prefix override (BUYER only; default: server-picked slug)")
-  .option("--scopes <scopes>", "Comma-separated scopes (default: per-purpose defaults)")
+  .option("--email <emailName>", "Email prefix override (default: server-picked slug)")
+  .option("--scopes <scopes>", "Comma-separated scopes (default: buyer defaults)")
   .option("--json", "Output as JSON")
   .action(async (opts, cmd) => {
     const config = resolveConfig(cmd.optsWithGlobals())
     const body: Record<string, unknown> = {}
-    if (opts.purpose) body.purpose = opts.purpose
     if (opts.name) body.name = opts.name
     if (opts.email) body.emailName = opts.email
     if (opts.scopes) body.scopes = opts.scopes.split(",").map((s: string) => s.trim())

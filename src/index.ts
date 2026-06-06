@@ -34,7 +34,7 @@ program.addCommand(mandateCommand)
 program.addCommand(platformCommand)
 
 // Commands that need the BUYER role (i.e. `payments:spend` scope on the API key).
-// A SELLER project's key won't carry that scope and the API will return 403.
+// A key without the payments:spend scope will get a 403.
 const BUYER_ONLY_COMMANDS = new Set(["pay", "mandate", "activity"])
 
 program.parseAsync(process.argv).catch((err) => {
