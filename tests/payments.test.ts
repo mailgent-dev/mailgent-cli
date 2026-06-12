@@ -25,7 +25,7 @@ function lastBody(mockFetch: ReturnType<typeof stubFetch>) {
 }
 
 beforeEach(() => {
-  process.env.MAILGENT_API_KEY = "loid-test"
+  process.env.MAILGENT_API_KEY = "mgnt-test"
   vi.spyOn(console, "log").mockImplementation(() => {})
   vi.spyOn(console, "error").mockImplementation(() => {})
 })

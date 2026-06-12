@@ -29,7 +29,7 @@ function lastUrl(mockFetch: ReturnType<typeof stubFetch>) {
 
 describe("vault store helpers", () => {
   beforeEach(() => {
-    process.env.MAILGENT_API_KEY = "loid-test"
+    process.env.MAILGENT_API_KEY = "mgnt-test"
     vi.spyOn(console, "log").mockImplementation(() => {})
   })
 
@@ -104,7 +104,7 @@ describe("vault store helpers", () => {
 
 describe("vault totp + backup codes", () => {
   beforeEach(() => {
-    process.env.MAILGENT_API_KEY = "loid-test"
+    process.env.MAILGENT_API_KEY = "mgnt-test"
   })
   afterEach(() => {
     vi.restoreAllMocks()

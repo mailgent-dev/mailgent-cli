@@ -14,20 +14,20 @@ describe("resolveConfig", () => {
 
   it("uses --api-key flag", async () => {
     const { resolveConfig } = await import("../src/config")
-    const config = resolveConfig({ apiKey: "loid-test123" })
-    expect(config.apiKey).toBe("loid-test123")
+    const config = resolveConfig({ apiKey: "mgnt-test123" })
+    expect(config.apiKey).toBe("mgnt-test123")
     expect(config.baseUrl).toBe("https://api.mailgent.dev")
   })
 
   it("uses MAILGENT_API_KEY env var", async () => {
-    process.env.MAILGENT_API_KEY = "loid-fromenv"
+    process.env.MAILGENT_API_KEY = "mgnt-fromenv"
     const { resolveConfig } = await import("../src/config")
     const config = resolveConfig({})
-    expect(config.apiKey).toBe("loid-fromenv")
+    expect(config.apiKey).toBe("mgnt-fromenv")
   })
 
   it("uses custom base URL from env", async () => {
-    process.env.MAILGENT_API_KEY = "loid-test"
+    process.env.MAILGENT_API_KEY = "mgnt-test"
     process.env.MAILGENT_API_URL = "http://localhost:3001"
     const { resolveConfig } = await import("../src/config")
     const config = resolveConfig({})
