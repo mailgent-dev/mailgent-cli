@@ -47,7 +47,7 @@ socialCommand
   .option("--json", "Output as JSON")
   .action(async (text, opts, cmd) => {
     const config = resolveConfig(cmd.optsWithGlobals())
-    const body: Record<string, unknown> = { caption: text }
+    const body: Record<string, unknown> = { text }
     if (opts.platforms) body.platforms = opts.platforms.split(",").map((p: string) => p.trim()).filter(Boolean)
     if (opts.media) body.mediaUrls = opts.media.split(",").map((u: string) => u.trim()).filter(Boolean)
     if (opts.schedule) body.scheduledAt = new Date(opts.schedule).toISOString()
