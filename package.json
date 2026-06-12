@@ -1,7 +1,7 @@
 {
   "name": "@mailgent-dev/cli",
-  "version": "0.6.2",
-  "description": "CLI for the Mailgent API — identity infrastructure for AI agents",
+  "version": "0.7.0",
+  "description": "CLI for the Mailgent API \u2014 identity infrastructure for AI agents",
   "bin": {
     "mailgent": "dist/index.js"
   },
