@@ -7,6 +7,8 @@ import { logsCommand } from "./commands/logs"
 import { didCommand } from "./commands/did"
 import { calendarCommand } from "./commands/calendar"
 import { platformCommand } from "./commands/platform"
+import { slackCommand } from "./commands/slack"
+import { socialCommand } from "./commands/social"
 import {
   payCommand,
   activityCommand,
@@ -32,6 +34,8 @@ program.addCommand(payCommand)
 program.addCommand(activityCommand)
 program.addCommand(mandateCommand)
 program.addCommand(platformCommand)
+program.addCommand(slackCommand)
+program.addCommand(socialCommand)
 
 // Commands that need the BUYER role (i.e. `payments:spend` scope on the API key).
 // A key without the payments:spend scope will get a 403.

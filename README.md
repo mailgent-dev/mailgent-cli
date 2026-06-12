@@ -115,6 +115,28 @@ mailgent mandate get <mandateId>
 mailgent mandate revoke <mandateId>
 ```
 
+### Slack
+
+```bash
+mailgent slack status                    # Show connection status
+mailgent slack connect                   # Get the install URL to connect a workspace
+mailgent slack disconnect
+mailgent slack channels                  # List channels
+mailgent slack send <channel> <text> [--thread <ts>]
+mailgent slack messages [--channel C…] [--since ISO] [--limit 50]
+```
+
+### Social
+
+```bash
+mailgent social accounts                 # List connected accounts
+mailgent social post <text> [--platforms x,linkedin] [--media url,url] [--schedule ISO]
+mailgent social posts [--limit 20]
+mailgent social status <postId>
+```
+
+Connecting social accounts is console-only: Settings → Integrations at [console.mailgent.dev](https://console.mailgent.dev).
+
 ## Global Options
 
 | Flag | Description |
